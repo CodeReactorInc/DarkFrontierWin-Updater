@@ -12,7 +12,6 @@ namespace CodeReactor.DarkFrontier.Core.Xml
         public Version Version;
         public string DownloadUrl;
         public string DFPath;
-        public Version InstallerInfo;
         public string Filename;
 
         public static DarkFrontier ParseXml(string xml)
@@ -30,11 +29,6 @@ namespace CodeReactor.DarkFrontier.Core.Xml
                 if (darkxml.Version.Minor < 0) throw new XmlException("Invalid DarkFrontier.Version.Minor");
                 if (darkxml.Version.Patch < 0) throw new XmlException("Invalid DarkFrontier.Version.Patch");
                 if (darkxml.Version.Revision < 0) throw new XmlException("Invalid DarkFrontier.Version.Revision");
-                if (darkxml.InstallerInfo == null) throw new XmlException("Invalid DarkFrontier.InstallerInfo");
-                if (darkxml.InstallerInfo.Major < 0) throw new XmlException("Invalid DarkFrontier.InstallerInfojor");
-                if (darkxml.InstallerInfo.Minor < 0) throw new XmlException("Invalid DarkFrontier.InstallerInfonor");
-                if (darkxml.InstallerInfo.Patch < 0) throw new XmlException("Invalid DarkFrontier.InstallerInfotch");
-                if (darkxml.InstallerInfo.Revision < 0) throw new XmlException("Invalid DarkFrontier.InstallerInfo.Revision");
                 return darkxml;
             }
             catch (Exception e)
